@@ -1,5 +1,7 @@
 package client;
 
+//Thanadon Pakawatthippoyom 5810405037
+
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.stage.Modality;
@@ -51,7 +53,7 @@ public class ClientDataReceiver extends Thread {
         }
 
         while (true) {
-            if (isInterrupted()){
+            if (isInterrupted()) {
                 this.interrupt();
                 break;
             }
@@ -91,11 +93,11 @@ public class ClientDataReceiver extends Thread {
                     });
                 }
                 // 400 mean end game
-                if ("400".equals(serverTexts[0])){
+                if ("400".equals(serverTexts[0])) {
                     controller.sendEndGameInformation();
                 }
 
-                if ("401".equals(serverTexts[0])){
+                if ("401".equals(serverTexts[0])) {
                     String information = serverTexts[2];
                     Platform.runLater(new Runnable() {
                         @Override

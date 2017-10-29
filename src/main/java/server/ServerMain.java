@@ -1,5 +1,7 @@
 package server;
 
+//Thanadon Pakawatthippoyom 5810405037
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +15,7 @@ public class ServerMain extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/server/MainScreen.fxml"));
         primaryStage.setTitle("Network 1");
         primaryStage.setScene(new Scene(root));

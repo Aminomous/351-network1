@@ -1,5 +1,7 @@
 package server;
 
+//Thanadon Pakawatthippoyom 5810405037
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -52,9 +54,10 @@ public class ServerDataManager extends Thread {
 
             TimerTask taskAddNotes = new TimerTask() {
                 private int time = 0;
+
                 @Override
                 public void run() {
-                    if (9 == time){
+                    if (9 == time) {
                         this.cancel();
                     }
                     int number = ((int) (Math.random() * 100)) % 7 + 1;
@@ -100,10 +103,10 @@ public class ServerDataManager extends Thread {
                 @Override
                 public void run() {
                     try {
-                        if (time == 31){
+                        if (time == 31) {
                             sendStatus("400 Game end");
                             this.cancel();
-                        }else {
+                        } else {
                             String status = "352 Time " + time;
                             sendStatus(status);
                             time++;
@@ -121,7 +124,7 @@ public class ServerDataManager extends Thread {
             ServerReceiveClientData clientB = new ServerReceiveClientData(this, subClient);
             clientA.start();
             clientB.start();
-            while ((score1[0] == -1) || (score2[0] == -1)){
+            while ((score1[0] == -1) || (score2[0] == -1)) {
                 sleep(1000);
             }
 
@@ -187,23 +190,24 @@ public class ServerDataManager extends Thread {
         return mainClient;
     }
 
-    public void setScore(int playerNumber, int score){
+    public void setScore(int playerNumber, int score) {
         System.out.println("player Number: " + playerNumber + " score: " + score);
-        if (playerNumber == 1){
+        if (playerNumber == 1) {
             score1[0] = playerNumber;
             score1[1] = score;
-        }else if (playerNumber == 2){
+        } else if (playerNumber == 2) {
             score2[0] = playerNumber;
             score2[1] = score;
         }
     }
-    public void announceWinner(){
+
+    public void announceWinner() {
         String status = "401 End ";
-        if (score1[1] > score2[1]){
+        if (score1[1] > score2[1]) {
             status += score1[0];
-        }else if (score1[1] == score2[1]){
+        } else if (score1[1] == score2[1]) {
             status += "draw";
-        }else if (score1[1] < score2[1]){
+        } else if (score1[1] < score2[1]) {
             status += score2[0];
         }
         try {

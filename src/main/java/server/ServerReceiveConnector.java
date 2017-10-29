@@ -1,5 +1,7 @@
 package server;
 
+//Thanadon Pakawatthippoyom 5810405037
+
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -41,10 +43,9 @@ public class ServerReceiveConnector extends Thread {
                 System.out.println("Socket timed out!");
                 break;
 
-            }catch(SocketException e ){
+            } catch (SocketException e) {
                 break;
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
                 break;
             }
@@ -56,7 +57,7 @@ public class ServerReceiveConnector extends Thread {
         if (isInterrupted()) {
             try {
                 serverSocket.close();
-            }catch (SocketException e){
+            } catch (SocketException e) {
 
             }
             this.interrupt();

@@ -1,5 +1,7 @@
 package client;
 
+//Thanadon Pakawatthippoyom 5810405037
+
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,7 +34,7 @@ public class ClientController {
     }
 
     private void connect() throws IOException {
-        serverName = this.ipField.getText().equals("")?"localhost":ipField.getText();
+        serverName = this.ipField.getText().equals("") ? "localhost" : ipField.getText();
         client = new Socket(serverName, port);
         receiver = new ClientDataReceiver(this, client, serverName, port);
         out = new DataOutputStream(client.getOutputStream());
@@ -86,7 +88,7 @@ public class ClientController {
     }
 
     public void setInformation(String[] information) {
-            gameMain.setScores(Integer.parseInt(information[0]), Integer.parseInt(information[1]));
+        gameMain.setScores(Integer.parseInt(information[0]), Integer.parseInt(information[1]));
     }
 
     public void setPlayerNumber(int number) {
@@ -101,7 +103,7 @@ public class ClientController {
         gameMain.setTime(time);
     }
 
-    public void endGame(String status){
+    public void endGame(String status) {
         gameMain.endGame(status);
     }
 

@@ -1,5 +1,7 @@
 package server;
 
+//Thanadon Pakawatthippoyom 5810405037
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -40,9 +42,9 @@ public class ServerReceiveClientData extends Thread {
                     sender.setScore(Integer.parseInt(information[0]), Integer.parseInt(information[1]));
                     break;
                 }
-            } catch(SocketException e) {
+            } catch (SocketException e) {
 
-            }catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }

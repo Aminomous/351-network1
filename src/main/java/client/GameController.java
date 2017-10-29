@@ -1,5 +1,7 @@
 package client;
 
+//Thanadon Pakawatthippoyom 5810405037
+
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -209,18 +211,18 @@ public class GameController {
     }
 
     public void setTime(String time) {
-        this.timeLabel.setText(time+"/30 second");
+        this.timeLabel.setText(time + "/30 second");
     }
 
-    public void endGame(String status){
+    public void endGame(String status) {
 
         Alert announce = new Alert(Alert.AlertType.INFORMATION);
         announce.setHeaderText("RESULT");
-        if(status.equals("draw")){
+        if (status.equals("draw")) {
             announce.setContentText("DRAW");
-        }else if (status.equals(playerNumber+"")){
+        } else if (status.equals(playerNumber + "")) {
             announce.setContentText("YOU WIN.");
-        }else{
+        } else {
             announce.setContentText("YOU LOSE.");
         }
         announce.showAndWait();

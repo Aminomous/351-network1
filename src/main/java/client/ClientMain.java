@@ -1,7 +1,6 @@
 package client;
-/**
- * Thanadon Pakawatthippoyom 5810405037
- */
+
+//Thanadon Pakawatthippoyom 5810405037
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
